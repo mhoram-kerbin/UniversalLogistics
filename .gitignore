@@ -1,1 +1,6 @@
 *~
+/GameData/UniversalLogistics/*.dll
+/GameData/UniversalLogistics/*.png
+/GameData/UniversalLogistics/*.mu
+/Source/UniversalLogistics/obj/
+/Source/UniversalLogistics/bin/
