@@ -33,6 +33,9 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\Lokal\KSP_dev\KSP_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
+    <Reference Condition="'$(Configuration)' == 'Debug'" Include="KramaxReloadExtensions">
+      <HintPath>..\..\..\..\KramaxPluginReload\KramaxReloadExtensions\obj\Debug\KramaxReloadExtensions.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,9 +55,10 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>rm -rf $(SolutionDir)..\..\..\..\..\Lokal\KSP_dev\GameData\$(ProjectName)\
-cp $(TargetPath) $(SolutionDir)..\..\GameData\$(ProjectName)\
-cp -r  $(SolutionDir)..\..\GameData\$(ProjectName) $(SolutionDir)..\..\..\..\..\Lokal\KSP_dev\GameData\
-</PostBuildEvent>
+REM cp $(TargetPath) $(SolutionDir)..\..\GameData\$(ProjectName)\
+REM cp -r  $(SolutionDir)..\..\GameData\$(ProjectName) $(SolutionDir)..\..\..\..\..\Lokal\KSP_dev\GameData\
+REM cd $(SolutionDir)..\..\..\..\..\Lokal\KSP_dev
+REM KSP.exe</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

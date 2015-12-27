@@ -28,7 +28,7 @@ using UnityEngine;
 
 namespace PB_UL
 {
-    
+/*    
     public class ULStation : PartModule
     {
         private double nextUpdate = 0;
@@ -46,7 +46,11 @@ namespace PB_UL
         private void onMyRegularUpdate()
         {
             List<CelestialBody> cb = ULU.getPlanetaryHierarchy(vessel);
-            cb.ForEach(c => ULU.deb(c.bodyName + " " + c.name));
+            ULU.deb("---");
+            cb.ForEach(c => ULU.deb("Body: " + c.name));
+
+            List<CelestialBody> d = ULU.getCommonParentBodies(cb, cb);
+            d.ForEach(c => ULU.deb("Common: " + c.name));
         }
 
         public override void OnStart(StartState state)
@@ -63,4 +67,5 @@ namespace PB_UL
             perform();
         }
     }
+ * */
 }
